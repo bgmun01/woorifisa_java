@@ -1,0 +1,39 @@
+package com.example.demo.bean;
+
+import java.util.Calendar;
+
+import org.springframework.stereotype.Component;
+
+import lombok.extern.java.Log;
+
+
+@Component
+public class SimpleBeanImpl implements Simplebean{
+	private String name = "홍길동";
+	private Calendar now = Calendar.getInstance();
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+		
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
+	}
+
+	@Override
+	public void setNow(Calendar cal) {
+		//log.debug("변수세팅 : {}", name); 이런놈들을 묶을거야
+		this.now = cal;
+		
+		
+	}
+
+	@Override
+	public Calendar getNow() {
+		return this.now;
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.example.demo.model.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.model.entity.City;
+
+public interface CityRepo extends JpaRepository<City, Long>{ //시티를 관리하고 long 값?
+//JPA repo를 상속 받아서 구현한다. 위에 코드 하나가 CRUD 를 만들었다? 
+	// 아까 메소드 확인 ㄱㄱ?
+}

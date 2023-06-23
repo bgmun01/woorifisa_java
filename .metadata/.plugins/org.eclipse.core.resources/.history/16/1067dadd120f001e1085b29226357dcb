@@ -1,0 +1,51 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+
+import com.example.demo.phone.GalaxyFold;
+import com.example.demo.phone.Iphone;
+
+import lombok.extern.slf4j.Slf4j;
+
+@SpringBootTest
+@Slf4j
+class Di1ApplicationTests {
+
+	@Test //단위 테스트 - 동작을 이렇게 테스트?? junit 탭을 통해 본다. 단위테스트
+	void contextLoads() {
+		Calculator c = new Calculator();
+		int result = c.add(100, 200); //단정문을 통해 결과를 검증하게 된다.
+		Assertions.assertEquals(result, 300);
+		
+		Assertions.assertEquals(c.add(1, 5),6);
+		
+	}
+	@Autowired // 해당 타입의 빈을 가져오세요!!
+	ApplicationContext ctx; //스프링 프레임 워크가 가지고 있는것
+	
+	@Test
+	public void beanTest() {
+		String [] beanNames = ctx.getBeanDefinitionNames();
+		for(String name: beanNames) {
+			log.debug("name: {}", name);
+			// 출력이 안된다? why? INFO 보다 낮은레벨이라서~~? 
+			// src/resources application.properties 가서 수정해줘야함
+			// 익숙한 이름들 아이폰, 갤럭시, 폰 유저 빈들의 이름
+		}
+	}
+//단위 테스트를 통해 빈들이 잘 됐는지 할거다 4번과정 블로그에
+	@Test
+	public void getBeanTest() {
+		Iphone iphone = ctx.getBean(Iphone.class);
+		iphone.call("101"); // 이거랑 달라
+		Object obj = ctx.getBean("galaxy");
+		if(obj instanceof GalaxyFold	 ) {
+			GalaxyFold g = (GalaxyFold)obj;
+			g.call("010");
+		}
+	}
+}

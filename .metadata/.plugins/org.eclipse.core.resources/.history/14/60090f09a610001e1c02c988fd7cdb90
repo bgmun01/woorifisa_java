@@ -1,0 +1,34 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import com.example.demo.model.repo.CityRepo;
+
+import lombok.extern.slf4j.Slf4j;
+
+
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = Replace.NONE)
+@Slf4j
+public class CityRepoTest {
+	//City Repo 쓰고 싶엉요
+	@Autowired
+	CityRepo repo;
+	// 시티 페포를 인플리먼트한 ???
+	@Test
+	public void beanTest() {
+		log.debug("repo : {}", repo.getClass().getName());
+	}
+	
+	
+	@Test
+	public void crudTest() {
+		long cnt = repo.count();
+		log.debug("현재건수 : {}", cnt);
+	}
+	
+}

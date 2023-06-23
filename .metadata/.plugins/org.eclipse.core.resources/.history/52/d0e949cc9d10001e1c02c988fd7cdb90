@@ -1,0 +1,25 @@
+package com.example.demo.model.entity;
+
+import java.util.List;
+
+public class Country {
+	private long code;
+	private String name;
+	private	String continent;
+	private	String region;
+	private	double surfaceArea;
+	private	int indepYear;
+	private int population;
+	private double lifeExpectancy;
+	private double gnp;
+	private double gnpOld;
+	private String localName;
+	private String governmanetForm;
+	private String headOfstate;
+	private int capital;
+	private String code2;
+	
+	List<City> cities;
+	
+	
+}

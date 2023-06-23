@@ -1,0 +1,23 @@
+package com.example.demo.car;
+
+public class DriveCar {
+	//쓰고 싶다 !! ->has a 관계 멤버변수로 관리한다. -> 초기화 get 함수 생성자 초기화 2개 방법
+	//폴리뮬피즘? 상위 구조 드라이브 라는 같은 기능이 있네?
+	// 인터페이스 사용
+	Car car;
+	
+//	public DriveCar() {
+//		this.car = new Teslar(); //이곳 한곳만 고쳤었음 하지만 아직 고쳤다 인터페이스를 이용해서 폴리뮬피즘을 했을땐
+//	} // new 한다는게 산다는것 구체화 - > 렌탈을 해야함!!
+	
+	
+	public DriveCar(Car car) {
+		this.car = car; //이곳 한곳만 고쳤었음 하지만 아직 고쳤다 인터페이스를 이용해서 폴리뮬피즘을 했을땐
+	} // new 한다는게 산다는것 구체화 - > 렌탈을 해야함!!
+	
+	public void move(String to) {
+		car.drive();
+		System.out.println(to+"로 gogo gogo!!");
+	}
+	
+}

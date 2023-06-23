@@ -1,0 +1,29 @@
+package com.example.demo.heroes;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.example.demo.phone.Heroes;
+
+public class Avengers {
+	// 전화기를 쓰고 싶다!
+	private Heroes heroes;
+	
+//	public PhoneUser() {
+//		this.phone = new GalaxyFold();
+	@Autowired
+	public Avengers(@Qualifier("iphone") Heroes p) {
+		this.heroes = p;
+	}
+	
+//	public void setPhone() {
+//		this.phone = new GalaxyFold(); //누가 나한테 줘야함? 
+		
+	public void setPhone(Heroes p) {
+		this.heroes = p; //누가 나한테 줘야함? 
+	}
+	
+	public void call(String to) {
+		System.out.println(heroes.getClass().getName()+"으로 펀치");
+	}
+}

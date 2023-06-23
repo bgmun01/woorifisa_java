@@ -1,0 +1,14 @@
+package com.example.demo.phone;
+
+import org.springframework.context.annotation.Configuration;
+
+//메타 정보를 작성할 설정파일 
+@Configuration // 선언하고 시작
+
+public class PhoneConfig {
+	//빈을 만들어보자
+	public Iphone iphone() {
+		return new Iphone();
+	}
+	
+}

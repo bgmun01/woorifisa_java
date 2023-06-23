@@ -1,0 +1,25 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.demo.bean.Simplebean;
+
+import lombok.extern.slf4j.Slf4j;
+
+@SpringBootTest
+@Slf4j
+class AopApplicationTests {
+	
+	
+	@Autowired
+	Simplebean sbean; //간단하게 객체가져오기 테스트할
+
+	@Test
+	public void beanTest() {
+		Assertions.assertNotNull(sbean); // sbean 객체가 잘 생성되어있나요? 비지 않았나요?
+	}
+
+}

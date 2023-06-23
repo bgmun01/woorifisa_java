@@ -1,0 +1,20 @@
+package com.example.demo.phone;
+
+
+
+public class PhoneUser {
+	// 전화기를 쓰고 싶다!
+	private GalaxyFold phone;
+	
+	public PhoneUser(GalaxyFold phone) {
+		this.phone = phone;
+	}
+	
+	public void setPhone(GalaxyFold phone) {
+		this.phone = phone;
+	}
+	
+	public void call(String to) {
+		System.out.println(phone.getClass().getName()+"으로 전화");
+	}
+}

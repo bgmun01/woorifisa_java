@@ -1,0 +1,21 @@
+package ch09_exception.b_throws;
+
+public class RuntimeThrowsTest {
+    public static void main(String[] args) {
+        RuntimeThrowsTest et = new RuntimeThrowsTest();
+        try {
+            et.method1();
+        } catch (ArithmeticException e) {
+            System.out.printf("예외 처리: %s%n", e.getMessage());
+        }
+        System.out.println("프로그램 종료");
+    }
+
+    public void method1() {
+        method2();
+    }
+
+    public void method2() {
+        int i = 1 / 0;
+    }
+}

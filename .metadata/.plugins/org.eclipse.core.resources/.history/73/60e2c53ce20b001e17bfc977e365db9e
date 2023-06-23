@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	// scriptlet : _jsp service의 local 영역 !! 로컬변수 선언은 어디였더람ㅁ
+		String name = "hong";
+	//	request. //이미 만들어져 있어서 사용할 수 있다.
+	%>
+	<%=name %>
+	
+	<%!
+	// <%! - declaration tag : member 변수, 메서드 구성 클래스영역
+		public String hi(String name){
+		return "hi " +name;
+	}
+	%>
+	<%=hi("jang") %>
+	
+</body>
+</html>

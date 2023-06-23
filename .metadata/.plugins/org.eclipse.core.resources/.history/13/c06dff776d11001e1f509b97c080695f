@@ -1,0 +1,29 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.ReadOnlyProperty;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.model.service.RepoService;
+
+@Controller
+public class HomeController {
+	
+	RepoService service;
+	// 주입방법 생성자
+	
+	
+	@Autowired
+	public HomeController(RepoService service) {
+		this.service = service;
+	}
+	
+	
+	@RequestMapping("/") //경로??
+	public String index() { //String 을 반환하는 index
+		return "index";
+		
+		
+	}
+}

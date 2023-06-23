@@ -1,0 +1,20 @@
+package com.example.demo.model;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+//@Component // 밋밋하다? 이거 보단 서비스!
+
+@Service
+public class RepoService {
+	@Autowired
+	CityRepo cityRepo;
+	
+	// 한 도시를 등록하면 그 도시의 자매도시도 등록한다.
+	
+	public void saveCity(String name) {
+		
+	}
+	
+}

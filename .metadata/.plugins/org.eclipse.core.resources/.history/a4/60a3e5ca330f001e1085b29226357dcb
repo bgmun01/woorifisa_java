@@ -1,0 +1,10 @@
+package com.example.demo.heroes;
+
+public class Hulk {
+	
+	
+	@Override
+	public void punch(String to) {
+		System.out.println("상대방에게 펀치" + to);
+	}
+}

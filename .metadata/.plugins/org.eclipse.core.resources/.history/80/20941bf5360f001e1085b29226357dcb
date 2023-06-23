@@ -1,0 +1,20 @@
+package com.example.demo.heroes;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Avengers {
+	private Hulk hulk;
+	private IronMan iman;
+		
+	@Autowired
+	public Avengers(Hulk hulk) {
+		this.hulk = hulk;
+	}
+	
+	@Autowired
+	public void setIronMan(IronMan iman) {
+		this.iman = iman;
+	}
+}

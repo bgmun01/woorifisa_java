@@ -1,0 +1,12 @@
+package com.example.demo.heroes;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Hulk implements Heroes{
+	
+	@Override
+	public void punch(String to) {
+		System.out.println("상대방에게 펀치" + to);
+	}
+}

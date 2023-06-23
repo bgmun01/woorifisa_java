@@ -1,0 +1,7 @@
+package com.example.demo.heroes;
+
+public class IronMan {
+	public void punch(String to) {
+		System.out.println("빔 쏴버려" + to);
+	}
+}

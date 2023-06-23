@@ -1,0 +1,20 @@
+package com.example.demo.phone;
+
+
+
+public class PhoneUser {
+	// 전화기를 쓰고 싶다!
+	private Iphone phone;
+	
+	public PhoneUser(Iphone phone) {
+		this.phone = phone;
+	}
+	
+	public void setPhone(Iphone phone) {
+		this.phone = phone;
+	}
+	
+	public void call(String to) {
+		System.out.println(phone.getClass().getName()+"으로 전화");
+	}
+}

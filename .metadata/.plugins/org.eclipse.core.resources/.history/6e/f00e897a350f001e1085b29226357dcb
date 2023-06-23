@@ -1,0 +1,11 @@
+package com.example.demo.heroes;
+
+public class IronMan implements Heroes{
+	
+	
+	@Override
+	public void punch(String to) {
+		System.out.println("빔 쏴버려" + to);
+		
+	}
+}

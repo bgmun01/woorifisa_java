@@ -1,0 +1,8 @@
+package com.example.demo.car;
+
+public class Ferrari implements Car{ //상위객체
+	
+	public void drive() {
+		System.out.println("페라리 나가신다.!!");
+	}
+}

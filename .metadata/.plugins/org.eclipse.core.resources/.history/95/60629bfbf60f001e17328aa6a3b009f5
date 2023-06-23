@@ -1,0 +1,14 @@
+package com.example.demo.model.entity;
+
+import java.time.LocalDateTime;
+
+// 1. java beans 규약이 필요하다 !!
+
+public class Employee {
+	private long empNo;
+	private String name;
+	private int age;
+	private	char gender;
+	private long managerNo;
+	private LocalDateTime hireDate;
+}

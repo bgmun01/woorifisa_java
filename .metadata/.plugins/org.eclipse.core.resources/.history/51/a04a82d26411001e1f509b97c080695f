@@ -1,0 +1,16 @@
+package com.example.demo.controller;
+
+import org.springframework.data.annotation.ReadOnlyProperty;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+	
+	@RequestMapping("/") //경로??
+	pubilc String index() { //String 을 반환하는 index
+		return "index";
+		
+		
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;web_day2/src/main/webapp/JSTL&apos; to &apos;jstl&apos;" description="Rename resource &apos;JSTL&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/JSTL" name="jstl" stamp="1687153239606" updateReferences="true"/>
+</session>

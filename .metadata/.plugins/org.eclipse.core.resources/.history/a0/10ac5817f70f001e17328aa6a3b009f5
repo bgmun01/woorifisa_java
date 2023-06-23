@@ -1,0 +1,19 @@
+package com.example.demo.model.entity;
+
+import java.time.LocalDateTime;
+
+import lombok.Data;
+
+// 1. java beans 규약이 필요하다 !!
+// - 모든 member는 private
+// - getter/setter, default constructor
+
+@Data
+public class Employee {
+	private long empNo;
+	private String name;
+	private int age;
+	private	char gender;
+	private long managerNo;
+	private LocalDateTime hireDate;
+}

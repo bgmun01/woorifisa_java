@@ -1,0 +1,40 @@
+package com.woorifis.webday3.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.woorifis.webday3.model.MyCakeService;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * Servlet implementation class AddServlet
+ */
+@WebServlet("/Add")
+@Slf4j
+public class AddServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 1. 파라미터 분석
+		//Request 에서 온다
+		String strNum1 = request.getParameter("num1");
+		String strNum2 = request.getParameter("num2");
+		log.debug("num1: {} , num2: {}", strNum1, strNum2);
+		int num1 = Integer.parseInt(strNum1);
+		int num2 = Integer.parseInt(strNum2);
+		// 2. 비즈니스 전문가(모델) 호출
+		int result = MyCakeService.getService().add(num1, num2);
+		log.debug("add result : {} " , result);
+		
+		// 3. 화면 전문가 연결 (View) 연결 3가지를 언제나 한다?
+	}
+
+}

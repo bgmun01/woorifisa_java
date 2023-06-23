@@ -1,0 +1,24 @@
+package com.example.demo.car;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+
+public class CarConfig {
+	
+	@Bean
+	public Teslar teslar14() {
+		return new Teslar();
+	}
+	@Bean
+	public Ferrari ferrari10() {
+		return new Ferrari();
+	}
+	@Bean
+	public DriveCar driveCar() {
+		DriveCar car = new DriveCar(teslar14());
+		return car;
+	}
+	}
+}

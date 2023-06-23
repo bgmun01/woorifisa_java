@@ -1,0 +1,9 @@
+package com.example.demo.car;
+
+public class Teslar {
+
+	
+	public void drive() {
+		System.out.println("테슬라 나가신다 !!!");
+	}
+}

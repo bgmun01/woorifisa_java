@@ -1,0 +1,44 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import com.example.demo.model.entity.Employee;
+
+import jakarta.persistence.EntityManager;
+
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = Replace.NONE	)
+
+public class RelationTest {
+	
+//	@BeforeAll // 모든거 앞에 한번 each는 각각의 테스트 앞에 한번
+	@BeforeEach // 각각의 텧스트 마다 핝ㅂ번
+	public void setup() {
+		//Employee 를 만들어보자.
+		Employee emp = Employee.builder().gender('M')
+				 .managerNo(0)
+				 .age(10).name("hong gil dong").build();
+		// Dept 도 만들어보자
+		Dept dept = new Dept(0, "영업부");
+		emp.setDept(dept);
+		em.persist(dept);
+		em.persist(emp);
+	}
+	
+	@Autowired
+	EntityManager em;
+	
+	@Test
+	public void beanTest() {
+		Assertions.assertNotNull(em);
+	}
+	
+
+}

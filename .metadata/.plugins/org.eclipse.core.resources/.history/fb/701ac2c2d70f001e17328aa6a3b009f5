@@ -1,0 +1,13 @@
+package com.example.demo.aspect;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyAspect {
+	
+	public void logging() { //advice
+		// 횡단 관심 코드
+		System.out.println("set 메서드 호출됨");
+	}
+
+}

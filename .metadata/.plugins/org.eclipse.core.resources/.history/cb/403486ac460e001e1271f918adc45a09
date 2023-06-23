@@ -1,0 +1,30 @@
+package com.woorifis.webday3.login;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * Servlet implementation class login
+ */
+@WebServlet("/login")
+@Slf4j
+public class login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String strid1 = request.getParameter("id1");
+		String strpw2 = request.getParameter("pw2");
+		log.debug("id1 : {}, pw2 : {}", strid1, strpw2);
+		int pw2 = Integer.parseInt("pw2");
+	}
+	
+}
+
+
